@@ -1,4 +1,4 @@
-import { renderSearchMusic,renderSongs} from "./ui.js";
+import { renderSearchMusic, renderSongs } from "./ui.js";
 
 //inputa girilen veriye göre aratacağımız apinin keyi
 const options = {
@@ -9,7 +9,7 @@ const options = {
     }
 };
 
-//popular müsikleri getireceğimiz api key
+//popular müzikleri getireceğimiz api key
 const optionsTop = {
     method: "GET",
     headers: {
@@ -59,7 +59,7 @@ export class API {
             //veriyi jason formatına çevir 
             const result = await response.json();
             //tanımladığımız song dizisine gelen cevabı aktar
-            this.songs=result.tracks;
+            this.songs = result.tracks;
 
             renderSongs(this.songs);
 
